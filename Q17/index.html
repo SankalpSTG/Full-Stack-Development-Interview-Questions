@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/superagent"></script>
+        <link href="./style.css" rel="stylesheet"/>
+        <script>
+            const onSendClicked = async function(){
+                const name = document.getElementById("name").value
+                const email = document.getElementById("email").value
+                const password = document.getElementById("password").value
+                if(name.length === 0 || email.length === 0 || password.length === 0){
+                    document.getElementById("error").innerHTML = "Invalid Details"
+                    return
+                }
+                document.getElementById("error").innerHTML = "Submitting Form"
+                const response = await makeRequest(10, {name, email, password})
+                console.log(response)
+                document.getElementById("error").innerHTML = "Please check response in browser console"
+            }
+            const makeRequest = async function(maxAttempts, data){
+                const response = await attemptRequest(0, maxAttempts, data)
+                return response
+            }
+            const attemptRequest = async function(attempt, maxAttempts, data){
+                if(attempt >= maxAttempts) return null
+                try{
+                    console.log("Making Request")
+                    const response = await superagent.post("https://httpbin.org/post")
+                    return response.body
+                }catch(err){
+                    console.log(err)
+                    return await attemptRequest(attempt + 1, maxAttempts, data)
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div class="form-container">
+            <div class="form-box">
+                <div class="form-main">
+                    <input id="name" type="text" placeholder="Name"/><br/>
+                    <input id="email" type="email" placeholder="Email"/><br/>
+                    <input id="password" type="password" placeholder="Password"/><br/>
+                    <button onclick="onSendClicked();">Submit</button>
+                    <p id="error"></p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
