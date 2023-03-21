@@ -34,4 +34,6 @@ Golang is more efficient when it comes to concurrency since golang uses goroutin
 ### Q15. What frameworks have you used in Node JS?
 ### Q16. What component libraries have you used in React?
 ### Q17. Design a simple form which will have name, email and password as input. Send the form data to a URL and display the response. Create a retry mechanism for making requests if the same fails or use asyncjs to retry.
+`Please check folder 'Q17'`
 ### Q18. Make a get request to a URL and save the response in a file. Create a retry mechanism if the same fails or use asyncjs to retry.
+*Please check folder 'Q18'*
