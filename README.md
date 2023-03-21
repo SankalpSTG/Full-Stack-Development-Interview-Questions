@@ -55,6 +55,9 @@ Variables declared at the global level have global scope, i.e. those variables c
 Variables declared inside a function can be accessed in that function only.
 
 Variables declared inside a block, for example in a for loop, depending on the way they are declared (i.e. using let or var or const), those variables will be accessible in the loop only or in the entire function.
+
+For nested scopes, the order in which the functions are called does not affect the scope chain.
+
 ### Q15. What frameworks have you used in Node JS?
 1. Express JS
 2. Nest JS
