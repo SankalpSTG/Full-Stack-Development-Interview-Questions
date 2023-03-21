@@ -26,12 +26,20 @@ Golang is more efficient when it comes to concurrency since golang uses goroutin
 ### Q7. Design a schema for... Users, Payment Gateways, Orders...
 ### Q8. Create a bucket for GCS, upload a file, create a pre-signed URL, make the file private?
 ### Q9. What are Hooks in React?
+*Unanswered. Please contribute*
 ### Q10. What are Higher Order Components in React?
+*Unanswered. Please contribute*
 ### Q11. Demonstrate the use of Goroutine?
+*Unanswered. Please contribute*
 ### Q12. What are the advantages of Next JS over React?
+*Unanswered. Please contribute*
 ### Q13. What is server side rendering? 
+*Unanswered. Please contribute*
 ### Q14. Explain Scope in Javascript?
+*Unanswered. Please contribute*
 ### Q15. What frameworks have you used in Node JS?
+1. Express JS
+2. Nest JS
 ### Q16. What component libraries have you used in React?
 1. React Bootstrap
 2. Ant Design
@@ -39,3 +47,5 @@ Golang is more efficient when it comes to concurrency since golang uses goroutin
 *Please check folder 'Q17'*
 ### Q18. Make a get request to a URL and save the response in a file. Create a retry mechanism if the same fails or use asyncjs to retry.
 *Please check folder 'Q18'*
+### Q19. What is pre-flight request?
+*Unanswered. Please contribute*
