@@ -92,18 +92,19 @@ In the pre-flight request, the browser sends the headers indicating the http met
 
 ### Q21. What are closures in Javascript?
 Closure is a phenomenon with javascript functions due to which, any function always has access to the variable environment of the execution context in which the function was created even after that execution context is gone.
-
-    const secureBooking = function(){
-	    let passengerCount = 0
-	    return function(){
-		    passengerCount += 1
-		    console.log(`Passenger Count = ${passengerCount}`)
-	    }
-    }
-    const booker = secureBooking()
-    booker() // Passenger Count = 1
-    booker() // Passenger Count = 2
-    booker() // Passenger Count = 3
+```
+const secureBooking = function(){
+	let passengerCount = 0
+	return function(){
+		passengerCount += 1
+		console.log(`Passenger Count = ${passengerCount}`)
+	}
+}
+const booker = secureBooking()
+booker() // Passenger Count = 1
+booker() // Passenger Count = 2
+booker() // Passenger Count = 3
+```
 In the above function 'secureBooking', the variable 'passengerCount' is declared and there is a nested function which is being returned. This is the function that is using 'passengerCount' variable declared in 'secureBooking'. Now the returned function is saved in 'booker' variable.
 
 If you understand about call stack and scope chaining, after the 'secureBooking' function is done executing, the execution context will be popped out of the call stack, and the scope is also gone.
