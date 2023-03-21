@@ -30,7 +30,16 @@ Golang is more efficient when it comes to concurrency since golang uses goroutin
 ### Q7. Design a schema for... Users, Payment Gateways, Orders...
 ### Q8. Create a bucket for GCS, upload a file, create a pre-signed URL, make the file private?
 ### Q9. What are Hooks in React?
-*Unanswered. Please contribute*
+Hooks allow users to have access to features of React such as having state in a functional component or causing side effects. This is basically for functional components.
+
+Following are the hooks in React:
+1. useState
+2. useEffect
+3. useContext
+4. useReducer
+5. useRef
+6. useMemo
+7. useCallback
 ### Q10. What are Higher Order Components in React?
 *Unanswered. Please contribute*
 ### Q11. Demonstrate the use of Goroutine?
