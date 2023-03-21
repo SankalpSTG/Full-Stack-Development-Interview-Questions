@@ -1,4 +1,6 @@
 # Full Stack Interview Questions (MERN + Golang)
+Following are the questions for Full Stack Development. These are all of the questions that I have been asked in my interviews. Also the dumbest questions are filtered out and hence these are the most practical questions a really good hiring manager might ask. The tech stack for these questions is MongoDB, SQL, Postgres, Express JS, Nest JS, GraphQL, React JS, Next JS, Node Js, Javascript, Typescript, Golang, and Docker with Google Cloud Platform (GCP) services such as Cloud Spanner, Cloud Run, GKE, App Engine, Compute Engine, Cloud SQL, Cloud Storage, Cloud Hosting, etc.
+
 ### Q1. What is ECMAScript?
 ECMAScript is basically a standardized version of JavaScript. This is what is supported by all the browsers.
 ### Q2. What is hoisting?
@@ -77,13 +79,42 @@ For nested scopes, the order in which the functions are called does not affect t
 *Please check folder 'Q17'*
 ### Q18. Make a get request to a URL and save the response in a file. Create a retry mechanism if the same fails or use asyncjs to retry.
 *Please check folder 'Q18'*
-### Q. What is CORS
+### Q19. What is CORS?
 Cross-Origin Resource Sharing (CORS) is an HTTP-header based mechanism that allows a server to indicate any origins (domain, scheme, or port) other than its own from which a browser should permit loading resources. Normally the browser doesn't allow sending request to a server from a domain other than the server domain.
 
 An example of a cross-origin request: the front-end JavaScript code served from https://domain-a.com uses XMLHttpRequest to make a request for https://domain-b.com/data.json.
 
 In this case, if domain-a is not allowed by domain-b, this will result into CORS error.
-### Q. What is pre-flight request
+### Q20. What is pre-flight request?
 CORS makes the use of pre-flight request before the actual request is being made to check if the current domain is allowed by the server. 
 
 In the pre-flight request, the browser sends the headers indicating the http method and headers that will be sent in actual requests to the server. 
+
+### Q21. What are closures in Javascript?
+Closure is a phenomenon with javascript functions due to which, any function always has access to the variable environment of the execution context in which the function was created even after that execution context is gone.
+
+    const secureBooking = function(){
+	    let passengerCount = 0
+	    return function(){
+		    passengerCount += 1
+		    console.log(`Passenger Count = ${passengerCount}`)
+	    }
+    }
+    const booker = secureBooking()
+    booker() // Passenger Count = 1
+    booker() // Passenger Count = 2
+    booker() // Passenger Count = 3
+In the above function 'secureBooking', the variable 'passengerCount' is declared and there is a nested function which is being returned. This is the function that is using 'passengerCount' variable declared in 'secureBooking'. Now the returned function is saved in 'booker' variable.
+
+If you understand about call stack and scope chaining, after the 'secureBooking' function is done executing, the execution context will be popped out of the call stack, and the scope is also gone.
+
+Hence after calling the booker() function, it should result into error as 'passengerCount' is declared in an execution context which is already gone (i.e. 'secureBooking' function).
+
+But using 'passengerCount' doesn't throw error due to the first statement mentioned; **Any function always has access to the variable environment of the execution context in which the function was created even after that execution context is gone.**
+
+Hence, the 'booker' function will always have access to 'passengerCount' variable both the function as well as the variable were created in 'secureBooking' function execution context.
+
+### Q22. What are all the ORMs that you have used?
+1. Mongoose
+2. Sequelize
+3. Typeorm
