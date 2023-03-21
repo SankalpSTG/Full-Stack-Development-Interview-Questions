@@ -47,5 +47,10 @@ Golang is more efficient when it comes to concurrency since golang uses goroutin
 *Please check folder 'Q17'*
 ### Q18. Make a get request to a URL and save the response in a file. Create a retry mechanism if the same fails or use asyncjs to retry.
 *Please check folder 'Q18'*
-### Q19. What is pre-flight request?
-*Unanswered. Please contribute*
+### Q. What is CORS
+Cross-Origin Resource Sharing (CORS) is an HTTP-header based mechanism that allows a server to indicate any origins (domain, scheme, or port) other than its own from which a browser should permit loading resources. Normally the browser doesn't allow sending request to a server from a domain other than the server domain.
+An example of a cross-origin request: the front-end JavaScript code served from https://domain-a.com uses XMLHttpRequest to make a request for https://domain-b.com/data.json.
+In this case, if domain-a is not allowed by domain-b, this will result into CORS error.
+### Q. What is pre-flight request
+CORS makes the use of pre-flight request before the actual request is being made to check if the current domain is allowed by the server. 
+In the pre-flight request, the browser sends the headers indicating the http method and headers that will be sent in actual requests to the server. 
