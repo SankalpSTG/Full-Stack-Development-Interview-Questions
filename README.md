@@ -30,7 +30,17 @@ Golang is more efficient when it comes to concurrency since golang uses goroutin
 4. Fixed: Fixed to viewport
 5. Sticky: Fixed to scroll position
 ### Q7. Design a schema for... Users, Payment Gateways, Orders...
-### Q8. Create a bucket for GCS, upload a file, create a pre-signed URL, make the file private?
+Scenario based question for DB Schema creation.
+
+Gather all the requirements / data points from interviewer and create a schema.
+### Q8. Create a bucket for GCS, upload a file, create a pre-signed URL, prevent bucket access.?
+Follow this to create bucket: https://cloud.google.com/storage/docs/creating-buckets
+
+To upload a file, we can drag and drop the file in the GCS bucket directly. Or we can upload through code as well. Check this: https://cloud.google.com/storage/docs/samples/storage-upload-file
+
+Follow this to create signed urls: https://cloud.google.com/storage/docs/access-control/signing-urls-with-helpers#storage-signed-url-object-nodejs
+
+Follow this to prevent public access to GCS bucket: https://cloud.google.com/storage/docs/public-access-prevention
 ### Q9. What are Hooks in React?
 Hooks allow users to have access to features of React such as having state in a functional component or causing side effects. This is basically for functional components.
 
@@ -43,13 +53,78 @@ Following are the hooks in React:
 6. useMemo
 7. useCallback
 ### Q10. What are Higher Order Components in React?
-*Unanswered. Please contribute*
+A higher order component is a function which takes a react component as input and returns another component or the same component with added parameters / functionalities.
+
+Examples of it are Redux's `connect` or Relay's `createFragmentContainer`
+
+HOCs are useful if you want to change props of a component and add more data to props or extract same logic of multiple components and put into one place. For more information please read: https://legacy.reactjs.org/docs/higher-order-components.html
 ### Q11. Demonstrate the use of Goroutine?
-*Unanswered. Please contribute*
+A goroutine is a light weight thread of execution. It enables us to run any code asynchronously. Following is the code.
+```
+package main
+import (
+    "fmt"
+    "time"
+)
+func f(from string) {
+    for i := 0; i < 3; i++ {
+        fmt.Println(from, ":", i)
+    }
+}
+func main() {
+    f("direct")
+    go f("goroutine")
+    go func(msg string) {
+        fmt.Println(msg)
+    }("going")
+    time.Sleep(time.Second)
+    fmt.Println("done")
+}
+```
+Output
+```
+go run goroutines.go
+direct : 0
+direct : 1
+direct : 2
+goroutine : 0
+going
+goroutine : 1
+goroutine : 2
+done
+```
+
+Using `go` keyword, we can execute any function asynchronously. We can also run an anonymous function as follows.
+
+```
+go func (msg){
+    fmt.Println(msg)
+}("Hello World")
+```
 ### Q12. What are the advantages of Next JS over React?
-*Unanswered. Please contribute*
-### Q13. What is server side rendering? 
-*Unanswered. Please contribute*
+There are no such advantages of using Next JS over React but Next JS has some more features that can be useful and hence Next JS is called as *react for production*
+1. Next JS generates html code which is more readable for search engines whereas React generates obfuscated javascript code by default.
+2. Next JS has added feature called Server Side Rendering.
+3. Next JS has file based routing where as React Router is not even part of React library.
+4. Using Next JS, we can write both front end as well as backend code in Node JS.
+### Q13. What is server side rendering in Next JS? 
+In traditional front-end frameworks, the server sends the application to the client, and then the application runs in the browser and does data fetching.
+
+In Next JS, we have a feature called Server Side Rendering, which can be used generate a page dynamically in backend itself and then send it to client. SSR can help pages to fetch data at the backend itself. 
+
+For SSR, we have a method `getServerSideProps` using which we can do data fetching at server side. This data can then be appended to the props of the page which will receive the data.
+
+```
+export async function getServerSideProps() {
+   // Your code
+   const data = .... ;
+   
+   // Passing data to the Page using props
+   return {
+       props : {data}
+   }
+}
+```
 ### Q14. Explain Scope in Javascript?
 Scope is a place or environment where a variable is declared. 
 
