@@ -194,3 +194,110 @@ Hence, the 'booker' function will always have access to 'passengerCount' variabl
 1. Mongoose
 2. Sequelize
 3. Typeorm
+
+### Q23. What is Agile Software Development?
+Agile in software development environment basically is divided into following steps:
+1. Requirements Collection
+2. Requirements Analysis
+3. Development
+4. Testing / Quality Assurance
+5. Deployment
+6. Maintenance & Feedback.
+
+However Agile in a broader world is an umbrella term which not only describes software development, nor the frameworks but it describes everything collectively. It focuses more on how the team communicates and approaches a change or a problem.
+
+Agile is basically the ability to create and react to changes. Changes could be anything, the team or the entire codebase.
+
+### Q24. What are the advantages of microservices over monolith?
+1. In case of monolith, the whole application is bundled into one code base, whereas for microservices, we divide the applications into smaller services.
+2. In case of monolith, if one api or one component receives a very high number of requests, the whole app needs to be scaled up. In case of microservices, only one service will be scaled up.
+3. In monolith, chances are very high that the code becomes messy. In microservices, we define good separation of concerns between all services.
+4. Scaling a monolith application is costly whereas scaling a service is cost effective.
+5. Scaling a monolith is resourse intensive whereas scaling a service is less resource consuming.
+
+### Q25. What are Message Queues?
+Message Queues are a way for microservices to communicate with each other.
+Examples are:
+1. AWS SQS
+2. Apache Kafka
+3. Rabbit MQ
+4. Google Pub Sub
+
+### Q26. What is Push and Pull Mechanism in RabbitMQ?
+In push style mechanism, a consumer registers to the queue. When the broker pushes a message, the consumer receives it and has to acknowledge with a positive, negative or rejecting acknowledgement. The message is not removed from the queue until some kind of acknowledgement is received.
+
+In pull mechanism, the consumer polls the queue for new messages. This is an expensive operation as the consumer continuously checks for new messages.
+
+### Q27. What is difference between Standard and FIFO queues in SQS?
+In standard queue, messages are ordered by best effort ordering.
+
+In FIFO Queues, messages preserve their order. This avoids duplication as well.
+
+Standard queues are best suited for scenarios such as sending email notifications. Here order is not important.
+
+FIFO queues are best suited for scenarios such as processing banking transactions. Here order of transactions is important.
+
+### Q28. What are disadvantages of using SQS?
+1. Not real time.
+2. Messages have no gurantee to be delivered.
+
+### Q29. Describe a previous usecase of caching(previous organization usecase)?
+When client requests for a data which does not exists on server itself, the server requests it from the data source and sends it to the user.
+
+The same data is again cached at the server with a expiry.
+
+If the client request the same data again, if the cached data is available at the server, it is sent back to the client. 
+
+If the cached data is not avaibale, the data is refetched from data source and sent to client as well as cached at server.
+
+Since we were dealing with multiple third party service providers, we had to use this mechanism to decrease the response time as well as the cost of third party services.
+
+### Q30. How to implement foreign id concept in MongoDB?
+Follow these articles: 
+1. https://www.mongodb.com/blog/post/6-rules-of-thumb-for-mongodb-schema-design
+2. https://www.mongodb.com/docs/manual/tutorial/model-referenced-one-to-many-relationships-between-documents/
+
+### Q31. Promises vs Async Await?
+Async Await is simply a syntactic sugar for promises.
+
+Syntax for async await is as follows
+```
+async function doSomething(){
+    //Does something async
+}
+
+//Will not work in global context. Just an example.
+await doSomething()
+
+function doSomethingNew(){
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("Hello World")
+        }, 1500)
+    })
+}
+
+//Will not work in global context. Just an example.
+const message = await doSomethingNew()
+console.log(message)
+```
+Syntax for Promises is as follows
+```
+function doSomethingNew(number){
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if(number % 2 === 0){
+                resolve("Even")
+            }else{
+                reject("Odd")
+            }
+        }, 1500)
+    })
+}
+
+doSomethingNew().then((message) => {
+    console.log(message)
+}).catch((err) => {
+    console.log(err)
+})
+```
