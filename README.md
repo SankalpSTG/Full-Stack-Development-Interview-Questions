@@ -307,3 +307,13 @@ doSomethingNew().then((message) => {
 2. Lazy Cache: App loads data from cache. In case of cache miss, app loads data from a second source, typically a database.
 Follow this page for more information: https://levelup.gitconnected.com/the-art-of-caching-for-backend-applications-38350f95def6
 
+### Q33. What is Virtual DOM in React?
+DOM stands for Document Object Model. The HTML DOM are constructed as a tree of objects. Javascript uses this Object Model to create dynamic HTML
+
+Virtual DOM is something that is used by libraries on top of Javascript such as React.
+It is a virtual representation of the UI kept in the memory and is synced with the real DOM by a library such as ReactDOM.
+
+This helps React provide us with a declarative API that adds a layer of abstraction on how things are updated on the UI, with other things such as Event Handling, Attribute Manipulation and Manual DOM Updating.
+
+DOM is updated by running a Diffing algorithm which identifies what has changed in Virtual DOM, and only those parts are then updated.
+
