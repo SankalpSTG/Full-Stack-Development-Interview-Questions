@@ -301,3 +301,9 @@ doSomethingNew().then((message) => {
     console.log(err)
 })
 ```
+
+### Q32. What are the cache filling strategies?
+1. Eager Cache: App loads data from cache only. If data is missing, a background service will handle data miss by updating data from data source to cache
+2. Lazy Cache: App loads data from cache. In case of cache miss, app loads data from a second source, typically a database.
+Follow this page for more information: https://levelup.gitconnected.com/the-art-of-caching-for-backend-applications-38350f95def6
+
