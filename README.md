@@ -308,7 +308,7 @@ doSomethingNew().then((message) => {
 Follow this page for more information: https://levelup.gitconnected.com/the-art-of-caching-for-backend-applications-38350f95def6
 
 ### Q33. What is Virtual DOM in React?
-DOM stands for Document Object Model. The HTML DOM are constructed as a tree of objects. Javascript uses this Object Model to create dynamic HTML
+DOM stands for Document Object Model. The HTML DOM are constructed as a tree of objects. Javascript uses this Object Model to create dynamic HTML.
 
 Virtual DOM is something that is used by libraries on top of Javascript such as React.
 It is a virtual representation of the UI kept in the memory and is synced with the real DOM by a library such as ReactDOM.
