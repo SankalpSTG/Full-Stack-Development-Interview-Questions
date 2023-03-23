@@ -24,6 +24,7 @@ Golang is faster than Node JS,  and it also requires less CPU and memory to do t
 
 Golang is more efficient when it comes to concurrency since golang uses goroutines which is basically a light weight execution thread. When it comes to Node JS, it uses event based callbacks which is less efficient compared to golang.
 ### Q6. In CSS, what are the different values for 'position' property?
+**Note**: For some, this might be a stupid question. However if some interviewer is asking you such question, she / he is simply checking if you know basics of CSS. This is because, there exists no front end developer who has never used the 'position' property. 
 1. Static: Positioned according to the normal flow of the page
 2. Relative: Relative to siblings
 3. Absolute: Fixed to parent
