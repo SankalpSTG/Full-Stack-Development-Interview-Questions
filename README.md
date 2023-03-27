@@ -318,3 +318,15 @@ This helps React provide us with a declarative API that adds a layer of abstract
 
 DOM is updated by running a Diffing algorithm which identifies what has changed in Virtual DOM, and only those parts are then updated.
 
+### Q34. What are call(), bind() and apply() methods in javascript?
+
+### Q35. What are prototype functions in javascript?
+*Unanswered. Please contribute*
+### Q36. What are the drawbacks of arrow function over normal function in javascript?
+*Unanswered. Please contribute*
+### Q37. Write code to achieve inheritance using function prototypes in javascript?
+*Unanswered. Please contribute*
+### Q18. What is virtual DOM in React? Which algorithm is used to update the real dom? What is reconciliation?
+*Unanswered. Please contribute*
+### Q19. How many virtual DOM are used by React?
+*Unanswered. Please contribute*
